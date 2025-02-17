@@ -32,7 +32,8 @@
             </nav>
             <nav class="header-actions">
                 <button class="header-book-button button">Book now</button>
-                <button class="header-burger-button">
+                <button class="header-burger-button" title="Menu">
+                    <span class="visually-hidden"> Open Menu</span>
                     <svg
                         width="23"
                         height="12"
@@ -74,5 +75,34 @@
                 </button>
             </nav>
         </header>
+        <main class="contetnt">
+            <h1 class="visually-hidden">Kropp Fitness</h1>
+            <section class="banner">
+                <h2 class="visually-hidden">Upcoming events</h2>
+                <div class="banner-body">
+                    <div class="banner-info">
+                        New event <br />
+                        coming up / <time datetime="06-07"> june 7</time> -
+                        <time datetime="06-13">13</time>
+                    </div>
+                    <h3 class="banner-title">crossfit</h3>
+                </div>
+                <div class="banner-paggination">
+                    <ul class="banner-paggination-list">
+                        <li class="banner-paggination-item">
+                            <button
+                                class="banner-pagination-button is-currnet"
+                            ></button>
+                        </li>
+                        <li class="banner-paggination-item">
+                            <button class="banner-pagination-button"></button>
+                        </li>
+                        <li class="banner-paggination-item">
+                            <button class="banner-pagination-button"></button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
     </body>
 </html>

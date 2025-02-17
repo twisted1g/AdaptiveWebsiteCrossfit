@@ -221,6 +221,7 @@ svg * {
     /* colors */
     --color-white: #ffffff;
     --color-black: #000000;
+    --color-dark: #131619;
     --color-grey: #404040;
     --color-light-grey: #c4c4c4;
 
@@ -297,12 +298,26 @@ a:hover {
     background-color: var(--color-light-grey);
 }
 
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     column-gap: 20px;
     padding-inline: 32px;
+    background-color: var(--color-dark);
 }
 .header-logo {
     flex-shrink: 0;
@@ -353,9 +368,42 @@ a:hover {
     color: var(--color-white);
     background-color: transparent;
     border: var(--border);
-    border-radius: var(--border-radius);
+    border-radius: 50%;
 }
 
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 985px;
+    padding: 36px 70px;
+    color: var(--color-white);
+    background-color: var(--color-dark);
+}
+
+.banner-body {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.banner-info {
+    display: flex;
+    align-items: end;
+    font-size: 30px;
+    line-height: 1.27;
+}
+
+.banner-info::before {
+    content: "";
+    width: 194px;
+    height: 194px;
+    background: url("icons/arrow-reverse.svg") center/contain no-repeat;
+}
+
+.banner-title {
+    font-size: 360px;
+    line-height: 1;
+}
 @media (max-width: 1024px) {
     .header {
         flex-wrap: wrap;
