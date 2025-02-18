@@ -346,7 +346,7 @@ a:hover {
     column-gap: 7px;
 }
 
-.header-menu-link.is-currnet::after {
+.header-menu-link.is-current::after {
     content: "";
     width: 5px;
     height: 5px;
@@ -389,27 +389,67 @@ a:hover {
 .banner-info {
     display: flex;
     align-items: end;
-    font-size: 30px;
+    font-size: clamp(16px, 1.56vw, 30px);
     line-height: 1.27;
 }
 
 .banner-info::before {
     content: "";
-    width: 194px;
-    height: 194px;
+    width: min(10.1vw, 194px);
+    aspect-ratio: 1;
+    margin-right: 30px;
     background: url("icons/arrow-reverse.svg") center/contain no-repeat;
 }
 
 .banner-title {
-    font-size: 360px;
+    font-size: min(18.75vw, 360px);
     line-height: 1;
+}
+
+.banner-paggination-list {
+    display: flex;
+    justify-content: center;
+}
+
+.banner-paggination-item {
+    display: flex;
+}
+
+.banner-pagination-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    background-color: transparent;
+    border: none;
+}
+
+.banner-pagination-button::after {
+    content: "";
+    width: 10px;
+    aspect-ratio: 1;
+    border: var(--border);
+    border-radius: 50%;
+    transition-duration: var(--transition-duration);
+}
+
+.banner-pagination-button.is-current::after {
+    background-color: var(--color-white);
+}
+
+.banner-pagination-button:not(.is-current):hover::after {
+    border-color: var(--color-light-grey);
 }
 @media (max-width: 1024px) {
     .header {
         flex-wrap: wrap;
         row-gap: 10px;
-        padding-inline: 15px;
         padding-top: 20px;
+    }
+
+    .header,
+    .banner {
+        padding-inline: 15px;
     }
 
     .header-menu {
