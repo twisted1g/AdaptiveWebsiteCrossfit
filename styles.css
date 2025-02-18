@@ -232,6 +232,7 @@ svg * {
     --font-family-addition: "Yantramanav", sans-serif;
 
     --input-height: 54px;
+    --header-height: 90px;
 
     --container-width: 1300px;
     --container-padding: 15px;
@@ -315,6 +316,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: var(--header-height);
     column-gap: 20px;
     padding-inline: 32px;
     background-color: var(--color-dark);
@@ -337,7 +339,7 @@ a:hover {
 .header-menu-link {
     display: inline-flex;
     align-items: center;
-    height: 90px;
+    height: var(--header-height);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
@@ -375,7 +377,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: end;
-    min-height: 985px;
+    min-height: calc(100vh - var(--header-height));
     padding: 36px 70px;
     color: var(--color-white);
     background-color: var(--color-dark);
@@ -395,7 +397,7 @@ a:hover {
 
 .banner-info::before {
     content: "";
-    width: min(10.1vw, 194px);
+    width: clamp(60px, 10.1vw, 194px);
     aspect-ratio: 1;
     margin-right: 30px;
     background: url("icons/arrow-reverse.svg") center/contain no-repeat;
@@ -456,8 +458,13 @@ a:hover {
         order: 1;
         flex-basis: 100%;
     }
+
     .header-menu-link {
         height: 60px;
+    }
+
+    .banner {
+        row-gap: 20px;
     }
 }
 
@@ -465,16 +472,33 @@ a:hover {
     .button {
         padding-inline: 18px;
     }
+
     .header-menu-link {
         height: 30px;
     }
+
     .header-menu0list {
         column-gap: 25px;
     }
+
     .header {
         padding-top: 10px;
     }
+
     .header-actions {
         column-gap: 15px;
+    }
+
+    .banner {
+        justify-content: center;
+        row-gap: 40px;
+    }
+
+    .banner-info {
+        margin-bottom: 5px;
+    }
+
+    .banner-info::before {
+        margin-right: 10px;
     }
 }
